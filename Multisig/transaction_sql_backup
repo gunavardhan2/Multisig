@@ -1,0 +1,92 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 15.4
+-- Dumped by pg_dump version 15.4
+
+-- Started on 2023-08-16 13:38:08
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+--
+-- TOC entry 3330 (class 1262 OID 16396)
+-- Name: multisig; Type: DATABASE; Schema: -; Owner: postgres
+--
+
+CREATE DATABASE multisig WITH TEMPLATE = template0 ENCODING = 'UTF8' LOCALE_PROVIDER = libc LOCALE = 'English_India.1252';
+
+
+ALTER DATABASE multisig OWNER TO postgres;
+
+\connect multisig
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+SET default_tablespace = '';
+
+SET default_table_access_method = heap;
+
+--
+-- TOC entry 217 (class 1259 OID 16435)
+-- Name: transaction; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.transaction (
+    transaction_id bigint NOT NULL,
+    approved boolean,
+    creator_id bigint,
+    executed boolean
+);
+
+
+ALTER TABLE public.transaction OWNER TO postgres;
+
+--
+-- TOC entry 3324 (class 0 OID 16435)
+-- Dependencies: 217
+-- Data for Name: transaction; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public.transaction (transaction_id, approved, creator_id, executed) VALUES (1, NULL, 7, NULL);
+INSERT INTO public.transaction (transaction_id, approved, creator_id, executed) VALUES (2, NULL, 7, NULL);
+INSERT INTO public.transaction (transaction_id, approved, creator_id, executed) VALUES (52, NULL, 7, NULL);
+INSERT INTO public.transaction (transaction_id, approved, creator_id, executed) VALUES (102, NULL, 7, NULL);
+INSERT INTO public.transaction (transaction_id, approved, creator_id, executed) VALUES (152, true, 7, NULL);
+INSERT INTO public.transaction (transaction_id, approved, creator_id, executed) VALUES (202, NULL, 7, NULL);
+INSERT INTO public.transaction (transaction_id, approved, creator_id, executed) VALUES (252, NULL, 7, NULL);
+
+
+--
+-- TOC entry 3181 (class 2606 OID 16439)
+-- Name: transaction transaction_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.transaction
+    ADD CONSTRAINT transaction_pkey PRIMARY KEY (transaction_id);
+
+
+-- Completed on 2023-08-16 13:38:08
+
+--
+-- PostgreSQL database dump complete
+--
+

@@ -1,0 +1,2 @@
+use the sql backup files for custom input or hit the apis create_user/create_sign_request with the
+same application properties files to create the table and then insert.
